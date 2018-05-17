@@ -1,0 +1,1 @@
+In app.js heb ik geprobeerd videoscript.js als module te gebruiken in het script. Uiteindelijk vond ik het persoonlijk handiger met testen als alles in dezelfde file zit. Om te testen er iets werkte heb ik een scriptje gemaakt dat hello print. Hiervan heb ik dus ook een module gemaakt met export.sayHello.
