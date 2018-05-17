@@ -1,5 +1,12 @@
-In app.js heb ik geprobeerd videoscript.js als module te gebruiken in het script.
+In app.js heb ik geprobeerd videoscript.js als module te gebruiken.
  Uiteindelijk vond ik het persoonlijk handiger met testen als alles in dezelfde file zit.
- Om te testen er iets werkte heb ik een scriptje gemaakt dat hello print. 
+ Om te testen of er iets werkte heb ik een scriptje gemaakt dat hello print. 
 Hiervan heb ik dus ook een module gemaakt met export.sayHello.
+
+In het dit script zet ik de opgehaalde data in een array. 
+Met de shotArray haal ik uit elk stukje de info die ik nodig heb (het id en de array uit de database).
+
+In het nieuwe script wordt dit opgehaald met een for loop,
+op die manier wordt alles uit de database opgehaald in plaats van alleen de hardcoded shotArray.
+
 
