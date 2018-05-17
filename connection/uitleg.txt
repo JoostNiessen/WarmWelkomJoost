@@ -1,3 +1,6 @@
-Testcon2 is uiteindelijk de werkende geworden. Eerst wordt er een connectie gemaakt met de server. Vervolgens wordt de juiste db geselecteerd en daarna de juiste collectie. Bij de andere files heb ik alleen connectie gemaakt met de server.
+Testcon2 is uiteindelijk de werkende geworden.
+ Eerst wordt er een connectie gemaakt met de server. 
+Vervolgens wordt de juiste db geselecteerd en daarna de juiste collectie.
+ Bij de andere files heb ik alleen connectie gemaakt met de server.
 
-voeg scene maker toe aan repository
+
