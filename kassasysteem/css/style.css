@@ -1,0 +1,40 @@
+
+header {
+	padding: 2rem;
+}
+
+p {
+	color: blue;
+	padding: 1rem;i
+	font-size: 1.2rem;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav {
+	padding: 1rem;
+}
+
+
+button.btn-lg{
+	margin: 5px;
+	width: 10rem;
+}
+
+.main {
+	padding: 2rem;
+}
+.menu {
+	border: 1px solid;
+	border-color: black;
+}
+
+.productnaam {
+	color: black;
+	font-weight: bold;
+}
+
+.
