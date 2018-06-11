@@ -28,14 +28,18 @@ MongoClient.connect("mongodb://localhost:27017/warmwelkom",(err,database) =>{
                 for (var videoName in shotArray){
                     if (typeof shotArray[videoName] !== 'function') {
                         console.log(shotArray[videoName]);
+                        //arrays gelogd om te checken
                         mergedVideo = mergedVideo.addInput(shotArray[videoName]);
+                        //videonamen in de shotarray worden als input gezet
                     }
                 }
 
                 console.log("Your video is being compiled");
+                //proces zichtbaar gemaakt in de console
 
-
+                
                 mergedVideo.mergeToFile('C:/Users/Joost/videoWW/ProofOfConcept0.mp4', './tmp/')
+                //de mergedvideo uit de vorige loop wordt in nieuwe video + pad als output gezet
                 .on('error', function(err) {
                     console.log('Error ' + err.message);
                 })
@@ -43,6 +47,7 @@ MongoClient.connect("mongodb://localhost:27017/warmwelkom",(err,database) =>{
                 .on('end', function() {
                     console.log('Your video is finished!');
                 process.exit()
+                    //proces laten stoppen
 
                 });
             });           
