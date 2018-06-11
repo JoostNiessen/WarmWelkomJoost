@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- verkeerde jquery ingeladen -->
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+<div class="container">
+  <div class="row">
+    <nav>
+    <button type="button" class="btn btn-primary btn-lg active" id="btnEten">Eten</button>
+<button type="button" class="btn btn-primary btn-lg active" id="btnDrinken">Drinken</button>
+    </nav>
+  </div>
+</div>
+
+
+
+
+
+<div class="col-md-12">
+  <div class="main">
+    <div class="container">
+      <div class="row">
+  		<div class="col-md-3">
+
+			<button type="button" class="btn btn-primary btn-lg" id="btnVoor">Voor</button>
+			<button type="button" class="btn btn-primary btn-lg" id="btnHoofd">Hoofd</button>
+			<button type="button" class="btn btn-primary btn-lg" id="btnNa">Na</button>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+	
+<script>
+// haal al het eten op
+
+$("#btnEten").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getEten();
+	}else{
+		getEten();
+	}
+});
+
+
+
+//haal al het drinken op 
+
+$("#btnDrinken").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getDrinken();
+	}else{
+		getDrinken();
+	}
+});
+
+
+
+function getEten() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.product == "eten"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+
+function getDrinken() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.product == "drinken"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+
+
+
+//buttonclicks kijken of er al een productlist is, zo ja, haal hem leeg en voer de functie uit, zo nee, voer de functie uit. 
+
+$("#btnVoor").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getVoor();
+	}else{
+		getVoor();
+	}
+});
+
+$("#btnHoofd").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getHoofd();
+	}else{
+		getHoofd();
+	}
+});
+
+$("#btnNa").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getNa();
+	}else{
+		getNa();
+	}
+});
+
+//tabel gebruiken 
+
+
+
+function getVoor() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.soort == "voor"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+// replace inner html jquery 
+
+
+
+
+function getHoofd() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.soort == "hoofd"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<hr>" + "<li>" + "<p>" + "<span>" + val2 + "</span>" + " ");
+				    }
+				    if(key2 == "soort") { 
+						items.push( " " + "<span>" + val2 + "</span>" + " " );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( " " + val2  + "</p>" + "</li>" + "<hr>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+function getNa() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.soort == "na"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+</script>
+</body>
+</html>
+
+
+<!-- 
+// $.getJSON("jsondata.json", function (data) {
+//    $.each(data, function (index, value) {
+//    	console.log(index);
+//      console.log(value.naam);       // READ THE DATA.
+
+
+//    });
+// });
+ -->
+

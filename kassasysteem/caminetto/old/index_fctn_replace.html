@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- verkeerde jquery ingeladen -->
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<button type="button" class="btn btn-primary btn-lg active" id="btnEten">Eten</button>
+<button type="button" class="btn btn-primary btn-lg active" id="btnDrinken">Drinken</button>
+
+
+<button type="button" class="btn btn-secondary" id="btnVoor">Voor</button>
+<button type="button" class="btn btn-secondary" id="btnHoofd">Hoofd</button>
+<button type="button" class="btn btn-secondary" id="btnNa">Na</button>
+
+
+
+<script>
+// haal al het eten op
+
+$("#btnEten").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getEten();
+	}else{
+		getEten();
+	}
+});
+
+
+
+//haal al het drinken op 
+
+$("#btnDrinken").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getDrinken();
+	}else{
+		getDrinken();
+	}
+});
+
+
+
+function getEten() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.product == "eten"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+
+function getDrinken() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.product == "drinken"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+
+
+
+//buttonclicks kijken of er al een productlist is, zo ja, haal hem leeg en voer de functie uit, zo nee, voer de functie uit. 
+
+$("#btnVoor").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getVoor();
+	}else{
+		getVoor();
+	}
+});
+
+$("#btnHoofd").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getHoofd();
+	}else{
+		getHoofd();
+	}
+});
+
+$("#btnNa").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getNa();
+	}else{
+		getNa();
+	}
+});
+
+
+
+
+
+function getVoor() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.soort == "voor"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+function getHoofd() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.soort == "hoofd"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+// $( "button" ).click(function() {
+//   $( "" ).empty();
+// });
+
+
+// function getVoor(){
+// 	if($("productlist").exists()) {
+// 		$( "productlist" ).empty();
+// 		$( "productlist" ).append("body");
+// 	}else{
+// 		$( "productlist" ).append("body");
+// 	}
+// }
+
+
+// $('#lijst').replaceWith('<li>''</li>')
+
+function getNa() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.soort == "na"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+	});	 
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+}
+
+
+</script>
+</body>
+</html>
+
+
+<!-- 
+// $.getJSON("jsondata.json", function (data) {
+//    $.each(data, function (index, value) {
+//    	console.log(index);
+//      console.log(value.naam);       // READ THE DATA.
+
+
+//    });
+// });
+ -->
+

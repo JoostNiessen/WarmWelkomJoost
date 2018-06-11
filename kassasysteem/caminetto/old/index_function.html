@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- verkeerde jquery ingeladen -->
+
+
+</head>
+<body>
+
+
+
+
+<p>Click "Try it" to execute the displayDate() function.</p>
+
+<button id="myBtn">Try it</button>
+
+<button id="btnVoor">Voor</button>
+<button id="btnHoofd">Hoofd</button>
+<button id="Na">Na</button>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("myBtn").onclick = displayDate;
+
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+
+
+
+<script>
+
+
+$(".content").append("<p>hij doet het</p>");
+
+
+document.getElementById("btnVoor").onclick = getVoor;
+
+
+
+
+function getVoor() {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data[0]);
+
+	$.each( data, function( key, val ) {
+		//als er een voorgerecht is
+		if(val.soort == "voor"){
+			$.each( data[key], function( key2, val2 ) {
+				//log naam en soort
+
+				    if(key2 == "naam") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }
+				    if(key2 == "soort") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }	
+				    if(key2 == "prijs") { 
+						items.push( "<li>" + val2 + "</li>" );
+				    }			   
+			});
+		}
+
+	});
+	 
+	  $( "<ul/>", {
+	    "class": "my-new-list",
+	    html: items.join( "" )
+	  }).appendTo( "body" );
+	});
+
+}
+
+// $.getJSON("jsondata.json", function (data) {
+//    $.each(data, function (index, value) {
+//    	console.log(index);
+//      console.log(value.naam);       // READ THE DATA.
+
+
+//    });
+// });
+</script>
+</body>
+</html>
+
+
+
+
+
+

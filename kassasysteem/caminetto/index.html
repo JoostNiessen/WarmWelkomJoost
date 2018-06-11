@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-7">
+    <nav>
+    <button type="button" class="btn btn-primary btn-lg active" id="btnEten">Eten</button>
+	<button type="button" class="btn btn-primary btn-lg active" id="btnDrinken">Drinken</button>
+    </nav>
+</div>
+  </div>
+</div>
+
+
+<div class="col-md-12">
+  <div class="main">
+    <div class="container">
+      <div class="row">
+  		<div class="col-md-3">
+			<button type="button" class="btn btn-primary btn-lg" id="btnVoor">Voor</button>
+			<button type="button" class="btn btn-primary btn-lg" id="btnHoofd">Hoofd</button>
+			<button type="button" class="btn btn-primary btn-lg" id="btnNa">Na</button>
+		</div>
+	
+              <div class="col-md-9">
+            	<div id="lijst">
+            	</div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	
+<script>
+// haal alles met de productnaam eten op.
+// Dit staat in de getProduct functie beschreven
+
+$("#btnEten").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getProduct('eten');
+	}else{
+		getProduct('eten');
+	}
+});
+
+
+
+//haal al het drinken op 
+
+$("#btnDrinken").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getProduct('drinken');
+	}else{
+		getProduct('drinken');
+	}
+});
+
+
+
+
+//buttonclicks kijken of er al een productlist is, zo ja, haal hem leeg en voer de functie uit, zo nee, voer de functie uit. 
+
+
+
+$("#btnVoor").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getSoort('voor');
+		
+	}else{
+		getSoort('voor');
+	}
+});
+
+$("#btnHoofd").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getSoort('hoofd');
+		
+	}else{
+		getSoort('hoofd');
+		
+	}
+});
+
+$("#btnNa").click(function(){
+	if($('body').has(".productlist")){
+		$(".productlist").empty();
+		getSoort('na');
+	}else{
+		getSoort('na');
+	}
+});
+
+
+
+
+function getProduct(product) {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+		$.each( data, function( key, val ) {
+			if(val.product == product){
+
+	   			items.push( "<tbody>" + "<tr>" + "<hr>");
+				items.push( "<td>" + val.naam + "</td>");
+				items.push( "<td>" + val.soort + "</td>");
+				items.push( "<td>" + val.prijs + "</td>");
+	   			items.push( "<hr>" + "</tr>" + "</tbody>" );
+			}
+		});
+
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "#lijst" );
+
+});
+
+};
+
+
+function getSoort(soort) {
+
+	$.getJSON( "jsondata.json", function( data ) {
+	  var items = [];
+	  console.log(data);
+
+		$.each( data, function( key, val ) {
+			// key is de array, value is alles wat daarin zit.
+			
+			if(val.soort == soort){
+				// de functie checkt of de soort die in de getSoort functie is meegegeven gelijk is aan de soort die in val.soort staat
+	   			items.push( "<tbody>" + "<tr>" + "<hr>");
+				items.push( "<td>" + val.naam + "</td>");
+				items.push( "<td>" + val.soort + "</td>");
+				items.push( "<td>" + val.prijs + "</td>");
+	   			items.push( "<hr>" + "</tr>" + "</tbody>" );
+			}
+		});
+
+	  $( "<ul/>", {
+	    "class": "productlist",
+	    html: items.join( "" )
+	  }).appendTo( "#lijst" );
+});
+
+};
+
+
+</script>
+</body>
+</html>
+

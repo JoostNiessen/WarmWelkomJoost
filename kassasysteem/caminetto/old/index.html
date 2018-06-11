@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- verkeerde jquery ingeladen -->
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<script>
+
+$(".content").append("<p>hij doet het</p>");
+
+$.getJSON( "jsondata.json", function( data ) {
+  var items = [];
+  console.log(data[0]);
+  
+
+$.each( data, function( key, val ) {
+	//als er een voorgerecht is
+	if(val.soort == "voor"){
+		$.each( data[key], function( key2, val2 ) {
+			//log naam en soort
+			
+			    if(key2 == "naam") { 
+					items.push( "<li>" + val2 + "</li>" );
+			    }
+			    if(key2 == "soort") { 
+					items.push( "<li>" + val2 + "</li>" );
+			    }			   
+		});
+	}
+
+});
+
+//
+
+  // $.each( data[0], function( key, val ) {
+
+  // 	if(){}
+
+  //   items.push( "<li id='" + key + "'>" + val + "</li>" );
+  // });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+});
+
+// $.getJSON("jsondata.json", function (data) {
+//    $.each(data, function (index, value) {
+//    	console.log(index);
+//      console.log(value.naam);       // READ THE DATA.
+
+
+//    });
+// });
+</script>
+</body>
+</html>
+
+
+
+
+
+
