@@ -9,13 +9,17 @@ MongoClient.connect("mongodb://localhost:27017/warmwelkom",(err,database) =>{
     myDB.collection('scenes')
 
         myDB.collection('scenes', function(err, collection) {
+            //in de scenes staan de paden naar de juiste shots in chronologische volgorde
                 
             collection.find().toArray(function(err, result) {
+            // de opgehaalde resultaten worden in een array gezet
 
 
             result.forEach(function(scene){
+                // elk resultaat wordt een scene
 
                 var shotArray = scene.shots;
+                // de shots die in de scene zitten worden in shotArray gezet
 
                 var fluent_ffmpeg = require("fluent-ffmpeg");
 
