@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta>
+    <meta charset="UTF-8">
+    <title>Hello World in Vue.js</title>
+  </meta>
+
+  <body>
+
+<script src="https://unpkg.com/vue"></script>
+
+
+<div id="example-3">
+  <button v-on:click="say('hi')">Say hi</button>
+  <button v-on:click="say('what')">Say what</button>
+</div>
+
+<script type="text/javascript">
+
+new Vue({
+  el: '#example-3',
+  methods: {
+    say: function (message) {
+      alert(message)
+    }
+  }
+})
+
+</script>
+
+
+
+<div id="app">
+  <span v-html="json.hello"></span>
+    <pre>{{ json.hello }}</pre>
+</div>
+
+<script type="text/javascript">
+new Vue({
+    el: '#app',
+    data: {
+        json: null
+    },
+    created: function () {
+      fetch("a.json")
+        .then(r => r.json())
+        .then(json => {
+          this.json=json;
+        });
+    }
+});
+</script>
+
+
+
+<div id="app">
+  <p>{{ message }}</p>
+</div>
+
+
+    <script>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})    </script>
+
+  </body>
+</html>

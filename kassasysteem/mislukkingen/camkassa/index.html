@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue CDN</title>
+</head>
+<body>
+    <body>
+
+    <div id="app">
+        {{ message }}
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+        
+    </script>
+
+
+
+<div id="apps">
+    <pre>{{ json.first_name  }}</pre>
+</div>
+
+<script type="text/javascript">
+var app = new Vue({
+    el: '#apps',
+    data: {
+        json: null
+    }
+});
+$.getJSON('http://localhost/3000/db.json', function (json) {
+    app.json = json;
+});
+</script>
+</body>
+
+
+</html>
+

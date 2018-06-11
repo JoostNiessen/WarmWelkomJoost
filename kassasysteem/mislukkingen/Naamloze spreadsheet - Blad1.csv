@@ -1,0 +1,22 @@
+id,naam,product,soort,subsoort,prijs
+1,Zuppa di Cipolle,eten,voor ,soep,"4,5"
+2,Zuppa Stracciatella,eten,voor,soep,"4,5"
+3,Insalata Mista,eten,voor,salade ,5
+4,Insalata Tonno,eten,voor,salade,8
+5,Zuppetta di Cozze   	,eten,voor,anti,10
+6,Insalata di Mare 	,eten,voor,anti,10
+7,Scaloppina alla Gorgonzola,eten,hoofd,vlees,17
+8,Scaloppina al Vino Bianco	,eten,hoofd,vlees ,17
+9,Filetto di Sogliola al Vino Bianco,eten,hoofd,vis,20
+10,Scampi dello Chef,eten,hoofd,vis,"21,5"
+11,La Trappe Blond,drinken,bier,speciaalbier,"3,5"
+12,Peroni,drinken,bier,,3
+13,Bavaria Radler 2.2%,drinken,bier,,"2,5"
+14,"Rosso, Lambrusco",drinken,wijn,,"2,75"
+15,Bianco,drinken,wijn,,"2,75"
+16,Cola ,drinken,fris,,2
+17,Fanta ,drinken,fris ,,2
+18,Latte Macchiato ,drinken,koffie,,"3,5"
+19,Espresso,drinken,koffie,,3
+20,Liqor 43,drinken,likeur,,"4,5"
+21,Jack Daniels,drinken,likeur,,5

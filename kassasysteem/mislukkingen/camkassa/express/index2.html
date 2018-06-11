@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>blabla</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+</body>
+
+
+<script type="text/javascript">
+
+
+$( document ).ready(function() {
+    $.ajax({
+        url: 'C:/Fontys3/VPW/CamNew/camkassa/express/words.json',
+        type: 'get',
+        dataType: 'json',
+        error: function(data){
+        },
+        success: function(data){
+            var tr = $('<tr>');
+            tr.append('<td>' + data.name + '<td>');
+            tr.append('<td>' + data.id + '<td>');
+         
+
+            $('#table').append(tr);           
+        }
+    });
+});
+
+</script>
+
+</html>
