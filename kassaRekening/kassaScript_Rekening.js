@@ -112,7 +112,7 @@ function decorateProduct(productsFiltered, val) {
     var prijs = val.prijs;
     var naam = val.naam;
 
-    productsFiltered.push( '<li><div>' + '<p class="priceTag">' + naam  + '</p>'+ '<div class="text-right">' + 
+    productsFiltered.push( '<li><div>' + '<p class="priceTag">' + naam  + '</p>'+ '<div class="text-right">' +
     '<button onclick="voegToe(' + prijs + ')" id="btnAdd" class="btn btn-primary">' + prijs + '</button></div>' + '</div></li>');
 
 }
