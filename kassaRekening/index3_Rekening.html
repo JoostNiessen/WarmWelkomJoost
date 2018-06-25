@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style_Rekening.css">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body onload="loadProduct();">
+<div class="col-md-12">
+  <div class="main">
+    <div class="container">
+      <div class="row">
+    		<div class="col-md-12">
+
+          <nav>
+            <button type="button" class="btn btn-primary btn-lg active" id="btnEten">Eten</button>
+          	<button type="button" class="btn btn-primary btn-lg active" id="btnDrinken">Drinken</button>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="container">
+    <div class="row">
+  		<div class="col-md-12">
+  			<button type="button" class="btn btn-primary btn-lg" id="btnAnti">Antipasti</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnSala">Salades</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnSoep">Soep</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnPasta">Pasta</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnPizza">Pizza</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnVlees">Vlees</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnVis">Vis</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnKinder">Kinder</button>
+  			<button type="button" class="btn btn-primary btn-lg" id="btnGelati">Gelati</button>
+  		</div>
+
+        <div class="col-md-10">
+          <script>
+            function voegToe(prijs) {
+
+              $("ol").append("<li>" + prijs + "</li>");
+
+              console.log(prijs);
+            }
+
+
+            function rekenUit() {
+
+              console.log('sdfsdf');
+
+            }
+
+            function toFirebase() {
+
+              var testkenk = "HOLLAAAAAAAAAAAAAAA";
+
+              var firebaseRef = firebase.database().ref();
+
+              firebaseRef.push().set(testkenk);
+              
+            }
+
+          </script>
+        
+
+          <div id="lijst">
+
+
+          </div>
+        </div>
+
+
+
+        <div class="col-md-2">
+          <div id="rekening">
+            <h4>Rekening</h4> 
+            <hr>
+
+            <ol>
+
+
+
+            </ol>
+
+     
+
+          <button id="btnReken" onclick="rekenUit()" class="btnRek btn">Reken</button>
+          <button id="btnFirebase" onclick="toFirebase()" class="btnRek btn">Submit</button>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</head>
+<body>
+
+  <script src="./kassaScript_Rekening.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+  <script type="text/javascript">
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBnEz5g9P5r1i8ZlFNF2IZe69mwhpJEml0",
+    authDomain: "kassabase.firebaseapp.com",
+    databaseURL: "https://kassabase.firebaseio.com",
+    projectId: "kassabase",
+    storageBucket: "",
+    messagingSenderId: "52423274949"
+  };
+  firebase.initializeApp(config);
+
+  
+  </script>
+
+
+
+</body>
+</html>
+
