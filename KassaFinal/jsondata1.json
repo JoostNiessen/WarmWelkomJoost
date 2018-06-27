@@ -1,0 +1,298 @@
+[
+ {
+   "id": 1,
+   "naam": "Zuppa di Cipolle",
+   "product": "eten",
+   "soort": "voor",
+   "subsoort": "soep",
+   "prijs": "4.5"
+ },
+ {
+   "id": 2,
+   "naam": "Zuppa Stracciatella",
+   "product": "eten",
+   "soort": "voor",
+   "subsoort": "soep",
+   "prijs": "4.5"
+ },
+ {
+   "id": 3,
+   "naam": "Insalata Mista",
+   "product": "eten",
+   "soort": "voor",
+   "subsoort": "salade",
+   "prijs": "5"
+ },
+ {
+   "id": 4,
+   "naam": "Insalata Tonno",
+   "product": "eten",
+   "soort": "voor",
+   "subsoort": "salade",
+   "prijs": "8"
+ },
+ {
+   "id": 5,
+   "naam": "Zuppetta di Cozze",
+   "product": "eten",
+   "soort": "voor",
+   "subsoort": "anti",
+   "prijs": "10"
+ },
+ {
+   "id": 6,
+   "naam": "Insalata di Mare",
+   "product": "eten",
+   "soort": "voor",
+   "subsoort": "anti",
+   "prijs": "10"
+ },
+ {
+   "id": 7,
+   "naam": "Scaloppina alla Gorgonzola",
+   "product": "eten",
+   "soort": "hoofd",
+   "subsoort": "vlees",
+   "prijs": "17"
+ },
+ {
+   "id": 8,
+   "naam": "Scaloppina al Vino Bianco",
+   "product": "eten",
+   "soort": "hoofd",
+   "subsoort": "vlees",
+   "prijs": "17"
+ },
+ {
+   "id": 9,
+   "naam": "Filetto di Sogliola al Vino Bianco",
+   "product": "eten",
+   "soort": "hoofd",
+   "subsoort": "vis",
+   "prijs": "20"
+ },
+ {
+   "id": 10,
+   "naam": "Scampi dello Chef",
+   "product": "eten",
+   "soort": "hoofd",
+   "subsoort": "vis",
+   "prijs": "21.5"
+ },
+ {
+   "id": 11,
+   "naam": "La Trappe Blond",
+   "product": "drinken",
+   "soort": "bier",
+   "subsoort": "speciaalbier",
+   "prijs": "3.5"
+ },
+ {
+   "id": 12,
+   "naam": "Peroni",
+   "product": "drinken",
+   "soort": "bier",
+   "subsoort": "",
+   "prijs": "3"
+ },
+ {
+   "id": 13,
+   "naam": "Bavaria Radler 2.2%",
+   "product": "drinken",
+   "soort": "bier",
+   "subsoort": "",
+   "prijs": "2.5"
+ },
+ {
+   "id": 14,
+   "naam": "Rosso, Lambrusco",
+   "product": "drinken",
+   "soort": "wijn",
+   "subsoort": "",
+   "prijs": "2.75"
+ },
+ {
+   "id": 15,
+   "naam": "Bianco",
+   "product": "drinken",
+   "soort": "wijn",
+   "subsoort": "",
+   "prijs": "2.75"
+ },
+ {
+   "id": 16,
+   "naam": "Cola",
+   "product": "drinken",
+   "soort": "fris",
+   "subsoort": "",
+   "prijs": "2"
+ },
+ {
+   "id": 17,
+   "naam": "Fanta",
+   "product": "drinken",
+   "soort": "fris",
+   "subsoort": "",
+   "prijs": "2"
+ },
+ {
+   "id": 18,
+   "naam": "Latte Macchiato",
+   "product": "drinken",
+   "soort": "koffie",
+   "subsoort": "",
+   "prijs": "3.5"
+ },
+ {
+   "id": 19,
+   "naam": "Espresso",
+   "product": "drinken",
+   "soort": "koffie",
+   "subsoort": "",
+   "prijs": "3"
+ },
+ {
+   "id": 20,
+   "naam": "Liqor 43",
+   "product": "drinken",
+   "soort": "likeur",
+   "subsoort": "",
+   "prijs": "4.5"
+ },
+ {
+   "id": 21,
+   "naam": "Jack Daniels",
+   "product": "drinken",
+   "soort": "likeur",
+   "subsoort": "",
+   "prijs": "5"
+ },
+ {
+   "id": 22,
+   "naam": "Margherita",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "pizza",
+   "prijs": "7.5"
+ },
+ {
+   "id": 23,
+   "naam": "Napolitana",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "pizza",
+   "prijs": "9"
+ },
+ {
+   "id": 24,
+   "naam": "Prosciutto`",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "pizza",
+   "prijs": "8.5"
+ },
+ {
+   "id": 25,
+   "naam": "Vulcano",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "pizza",
+   "prijs": "9"
+ },
+ {
+   "id": 26,
+   "naam": "Filetto alla Senape",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "vlees",
+   "prijs": "25"
+ },
+ {
+   "id": 27,
+   "naam": "Filetto alla Griglia",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "vlees",
+   "prijs": "24"
+ },
+ {
+   "id": 28,
+   "naam": "Scampi dello Chef",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "vis",
+   "prijs": "22.5"
+ },
+ {
+   "id": 29,
+   "naam": "Filletto di Sogliola alla pizzaiola",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "vis",
+   "prijs": "22"
+ },
+ {
+   "id": 30,
+   "naam": "Capesante dello Chef",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "vis",
+   "prijs": "23.5"
+ },
+ {
+   "id": 31,
+   "naam": "Capesante dello Chef",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "vis",
+   "prijs": "24"
+ },
+ {
+   "id": 32,
+   "naam": "Schnitzeltje met patate",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "kinder",
+   "prijs": "10"
+ },
+ {
+   "id": 33,
+   "naam": "Spaghetti o Penne Bolognese",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "kinder",
+   "prijs": "7"
+ },
+ {
+   "id": 34,
+   "naam": "Coppa Caramello",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "gelati",
+   "prijs": "5.5"
+ },
+ {
+   "id": 35,
+   "naam": "Coppa Banana",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "gelati",
+   "prijs": "5.5"
+ },
+ {
+   "id": 36,
+   "naam": "Cassata",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "gelati",
+   "prijs": "6"
+ },
+ {
+   "id": 37,
+   "naam": "Tiramisú",
+   "product": "eten",
+   "soort": "",
+   "subsoort": "gelati",
+   "prijs": "6"
+ }
+]
